@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "947013679884",
+    "firebase_url": "https://fireship-5d9e2-default-rtdb.firebaseio.com",
+    "project_id": "fireship-5d9e2",
+    "storage_bucket": "fireship-5d9e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947013679884:android:7b78fc3a1937725de5a729",
+        "android_client_info": {
+          "package_name": "com.steve.fireship"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "947013679884-h0lv3j761di60fvsf74jnvmloo2rb4sp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.steve.fireship",
+            "certificate_hash": "dcedb844cc7b4e703fff5a3f5cdd9d325fbfb43c"
+          }
+        },
+        {
+          "client_id": "947013679884-til28b7jq60hopqqt8482ss7j1dqp3e0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.steve.fireship",
+            "certificate_hash": "96391ebcf8dcd09f081dd8d1c655fc0f08304ba8"
+          }
+        },
+        {
+          "client_id": "947013679884-fbi2rp1eolh6aioavo1rsj84blr3csqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkpb2C5rBkNX9uu4w5sCg_x_7r14QZ6bk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "947013679884-fbi2rp1eolh6aioavo1rsj84blr3csqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947013679884:android:37f066f42db6fa86e5a729",
+        "android_client_info": {
+          "package_name": "ke.ghostsec.incyte"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "947013679884-l2gdrp0i9aauqrnln6fk27gkh606dqqu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ke.ghostsec.incyte",
+            "certificate_hash": "96391ebcf8dcd09f081dd8d1c655fc0f08304ba8"
+          }
+        },
+        {
+          "client_id": "947013679884-fbi2rp1eolh6aioavo1rsj84blr3csqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkpb2C5rBkNX9uu4w5sCg_x_7r14QZ6bk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "947013679884-fbi2rp1eolh6aioavo1rsj84blr3csqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
