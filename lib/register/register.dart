@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:incyte/services/auth.dart';
+
 import '../components/my_button.dart';
 import '../components/my_textfield.dart';
 import '../components/square_tile.dart';
@@ -13,7 +12,8 @@ class RegisterScreen extends StatelessWidget {
 
   RegisterScreen({Key? key}) : super(key: key);
 
-  void signUpUser(BuildContext context, String username, String password) async {
+  void signUpUser(
+      BuildContext context, String username, String password) async {
     if (_validateInputs(username, password)) {
       try {
         await AuthService().emailSignUp(email: username, password: password);
@@ -39,13 +39,10 @@ class RegisterScreen extends StatelessWidget {
     }
   }
 
-
   bool _validateInputs(String email, String password) {
     final emailRegExp = RegExp(r'^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$');
     return emailRegExp.hasMatch(email) && password.length >= 6;
   }
-
-
 
   void _showPasswordRequirements(BuildContext context) {
     showDialog(
@@ -74,8 +71,6 @@ class RegisterScreen extends StatelessWidget {
       },
     );
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -149,8 +144,10 @@ class RegisterScreen extends StatelessWidget {
                 const SizedBox(height: 25),
                 MyButton(
                   onTap: () {
-                    signUpUser(context, usernameController.text, passwordController.text);
-                  }, text: 'Sign up',
+                    signUpUser(context, usernameController.text,
+                        passwordController.text);
+                  },
+                  text: 'Sign up',
                 ),
                 const SizedBox(height: 50),
                 Padding(
@@ -180,13 +177,15 @@ class RegisterScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 30),
-                 Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
                       child: const SquareTile(imagePath: 'assets/google.png'),
-                      onTap: (){
-                        AuthService().googleLogin().then((value) => Navigator.pop(context));
+                      onTap: () {
+                        AuthService()
+                            .googleLogin()
+                            .then((value) => Navigator.pop(context));
                       },
                     ),
                   ],
@@ -222,8 +221,6 @@ class RegisterScreen extends StatelessWidget {
         ),
       ),
     );
-
-
   }
 
   // void signUpUser(String username, String password) {
@@ -240,6 +237,4 @@ class RegisterScreen extends StatelessWidget {
   //     AuthService().emailLogin(email: username, password: password);
   //   });
   // }
-
-
 }

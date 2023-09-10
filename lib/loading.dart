@@ -42,7 +42,8 @@ class _LoginRegisterScreenState extends State<LoginRegisterScreen> {
             TextFormField(
               controller: _emailController, // Bind the controller
               style: FxTextStyle.bodyLarge(
-                  letterSpacing: 0.1, color: themeData.colorScheme.onBackground),
+                  letterSpacing: 0.1,
+                  color: themeData.colorScheme.onBackground),
               decoration: InputDecoration(
                 hintText: "Email",
                 // ... Other decoration properties ...
@@ -53,7 +54,8 @@ class _LoginRegisterScreenState extends State<LoginRegisterScreen> {
               child: TextFormField(
                 controller: _passwordController, // Bind the controller
                 style: FxTextStyle.bodyLarge(
-                    letterSpacing: 0.1, color: themeData.colorScheme.onBackground),
+                    letterSpacing: 0.1,
+                    color: themeData.colorScheme.onBackground),
                 decoration: InputDecoration(
                   hintText: "Password",
                   // ... Other decoration properties ...

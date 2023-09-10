@@ -6,10 +6,6 @@ class MyButton extends StatelessWidget {
 
   const MyButton({required this.text, required this.onTap, super.key});
 
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

@@ -33,7 +33,6 @@ class ForgotPassword extends StatelessWidget {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +64,7 @@ class ForgotPassword extends StatelessWidget {
                 const SizedBox(height: 10),
                 MyButton(
                   onTap: () {
-                    resetPassword(context , email:emailController.text);
+                    resetPassword(context, email: emailController.text);
                   },
                   text: 'Reset Password',
                 ),

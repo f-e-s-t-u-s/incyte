@@ -1,95 +1,11 @@
-
-
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
 import 'package:incyte/services/auth.dart';
-
 
 import '../components/my_button.dart';
 import '../components/my_textfield.dart';
 import '../components/square_tile.dart';
 import '../register/register.dart';
-import '../topics/topics.dart';
-import 'forgot_password.dart';
-
-
-/*
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(30),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const FlutterLogo(
-              size: 150,
-            ),
-            Flexible(
-              child: LoginButton(
-                icon: FontAwesomeIcons.userNinja,
-                text: 'Continue as Guest',
-                loginMethod: AuthService().anonLogin,
-                color: Colors.deepPurple,
-              ),
-            ),
-            LoginButton(
-              text: 'Sign in with Google',
-              icon: FontAwesomeIcons.google,
-              color: Colors.blue,
-              loginMethod: AuthService().googleLogin,
-            ),
-
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class LoginButton extends StatelessWidget {
-  final Color color;
-  final IconData icon;
-  final String text;
-  final Function loginMethod;
-
-  const LoginButton(
-      {super.key,
-        required this.text,
-        required this.icon,
-        required this.color,
-        required this.loginMethod});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 10),
-      child: ElevatedButton.icon(
-        icon: Icon(
-          icon,
-          color: Colors.white,
-          size: 20,
-        ),
-        style: TextButton.styleFrom(
-          padding: const EdgeInsets.all(24),
-          backgroundColor: color,
-        ),
-        onPressed: () => loginMethod(),
-        label: Text(text, textAlign: TextAlign.center),
-      ),
-    );
-  }
-}
-*/
-
-
 
 
 
@@ -99,7 +15,6 @@ class LoginPage extends StatelessWidget {
   // textediting controller
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +45,6 @@ class LoginPage extends StatelessWidget {
 
                 // username textfield
                 MyTextField(
-
                   controller: usernameController,
                   hintText: 'Username',
                   obsecuretext: false,
@@ -169,11 +83,11 @@ class LoginPage extends StatelessWidget {
 
                 // sign in button
                 MyButton(
-
                   onTap: () {
-                    signInUser( context,
-                        usernameController.text, passwordController.text);
-                  }, text: 'Sign in',
+                    signInUser(context, usernameController.text,
+                        passwordController.text);
+                  },
+                  text: 'Sign in',
                 ),
 
                 const SizedBox(height: 50),
@@ -207,14 +121,14 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 30),
 
                 // google  + apple sign in button
-                 Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     // google button
                     GestureDetector(
-                        child: const SquareTile(imagePath: 'assets/google.png'),
-                      onTap: (){
-                          AuthService().googleLogin();
+                      child: const SquareTile(imagePath: 'assets/google.png'),
+                      onTap: () {
+                        AuthService().googleLogin();
                       },
                     ),
                     /*SizedBox(
@@ -237,7 +151,7 @@ class LoginPage extends StatelessWidget {
                     const SizedBox(
                       width: 4,
                     ),
-                     InkWell(
+                    InkWell(
                       child: const Text(
                         "Register now",
                         style: TextStyle(
@@ -246,9 +160,11 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(
-                            builder: (context) => RegisterScreen()
-                        ));                      },
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegisterScreen()));
+                      },
                     ),
                   ],
                 )
@@ -260,12 +176,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
-// void signInUser(String username, String password) {
-//     // Call your sign-in logic using the provided username and password
-//     // AuthService().signIn(username, password);
-// AuthService().emailLogin(email: username, password: password);
-//
-//   }
+
 void signInUser(BuildContext context, String username, String password) async {
   try {
     await AuthService().emailLogin(email: username, password: password);
@@ -285,5 +196,3 @@ void signInUser(BuildContext context, String username, String password) async {
     );
   }
 }
-
-

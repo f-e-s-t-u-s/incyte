@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:incyte/topics/topics.dart';
 import 'package:incyte/login/login.dart';
+import 'package:incyte/report/report.dart';
 import 'package:incyte/services/auth.dart';
 
-import '../test.dart';
 /***
  *
  * Home Screen Check auth state logged in or out
@@ -23,7 +22,8 @@ class HomeScreen extends StatelessWidget {
             child: Text('error'),
           );
         } else if (snapshot.hasData) {
-          return const TopicsScreen();
+          return MyApp();
+          // return const ReportScreen();
         } else {
           return LoginPage();
         }
